@@ -1,19 +1,86 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
-</head>
-<title>mobile</title>     
-<script src="https://api.dmcdn.net/all.js"></script>
-<link rel="stylesheet" href="default.css" type="text/css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+
+    <title>방송</title>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.rtl.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.mobile.all.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
 </head>
 <body>
-	<div id="player" style="width: 100%; height: 45%; ">
-		<iframe width="100%" height="100%" src="https://player.twitch.tv/?channel=dbsk12q3m&parent=dbskdlxh.github.io" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-	</div>	
-	
-	<div id="livechat" >
+  
+<style>
+    html,
+    body
+    {
+        height:100%;
+        margin:0;
+        padding:0;
+        overflow:hidden;
+        font-size: 0;
+    }
+
+    #vertical
+    {
+        height:100%;
+        margin:0;
+        padding:0;
+        font-size: 0;
+    }
+    
+    #div1{
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    font-size: 0;
+    }
+  
+    #div2 {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin:0;
+    font-size: 0;
+    }
+</style>
+<style>iframe { vertical-align:bottom; } </style>
+<style>iframe { display:block; } </style>
+<div id="vertical">
+    <!--트위치 삽입 -->
+    <div id="player">
+        <iframe width="100%" height="100%" src="https://player.twitch.tv/?channel=48groups&parent=48groups.ml" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+    </div>
+    <!--유튜브 삽입 -->
+<!--     <div id="div1">
+      <div id="div2">
+        <iframe width=100% height=100% src="https://www.youtube.com/embed/4tD5C_ZNc-Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>   -->
+    <div id="livechat">       
 		<iframe width="100%" height="100%" src="https://poooo.ml/48/chatroom"></iframe>
-	</div>
+<!--         <iframe src="https://service.dongledongle.com/48groups" frameborder="0" width="100%" height="100%"></iframe> -->
+    </div>
+</div>
+
+<script>
+    $(function() {
+        $("#vertical").kendoSplitter({
+          	orientation: "vertical",
+            panes: [
+                { collapsible: false, scrollable: false, size: "34%" },
+                { collapsible: false, scrollable: false }
+            ]
+        });
+    });
+</script>
 </body>
 </html>
